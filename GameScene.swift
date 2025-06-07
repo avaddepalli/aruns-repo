@@ -1,7 +1,8 @@
+#if canImport(SpriteKit)
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+public class GameScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
@@ -39,3 +40,9 @@ class GameScene: SKScene {
         return String(letters.randomElement()!)
     }
 }
+#else
+/// Minimal stub for non-Apple platforms where SpriteKit isn't available.
+public class GameScene {
+    public init() {}
+}
+#endif
